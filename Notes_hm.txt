@@ -1,0 +1,213 @@
+Linux distributions:
+- Debian
+- Fedora,
+- Arch Linux,
+- Ubuntu
+
+Linux is a free and open-source OS, designed by Linus Torvalds in 1991. 
+Based on ideas from UNIX and MINIX OS
+Linux is resilient, dependable, safe and flexible.
+
+The distribution has Linux kernel and supporting libraries and software
+Around 600 distributions exist
+
+
+
+Commands
+
+Right click on desktop and select open in terminal
+
+ls 
+list files and directories 
+
+ls -d */
+list directories
+
+cat mydoc
+display file mydoc contents
+
+pwd
+print working directory, full path
+
+mkdir mydir
+creates a directory in current directory
+
+cd mydir
+to get into directory mydir
+
+cd -
+go back to parent directory
+
+cp <source> <destination>
+copy file in source path to destination path
+
+cp <source> .
+copy file in source path to current directory
+
+rm myfile
+deletes the file myfile in current directory
+
+mv myfile myfilecopy
+changes name of file
+
+mv <source> <destination>
+moves the file
+
+ls -p | grep -v /
+list only files
+   ls -p appends a / to directories in the list
+   grep -v /  filters out those with /
+
+touch myfile
+creates a new file
+ if file exists, timestamp is updated
+
+ln -s myfile myfilelink
+create a link to a file, like a shortcut
+  - link symbolic
+
+ln myfile myfilek
+ will create hard link, with contents
+
+vim myfile
+enter vi editor to make changes in file
+i
+insert mode
+type in text
+esc
+:wq!
+save and exit
+:q!
+exit without saving
+
+hardlink contents will change if original is changed
+
+clear
+clear the terminal contents displayed
+
+echo this is great
+displays this is great
+
+cat myfile | less
+displays partly for large files
+ use space bar for scrolling
+ use q for exiting
+
+man ls
+ displays details about ls command
+ useful to know about all possible ls commands
+
+uname -a
+gives details of Linux kernel
+name, hostname, kernel release, kernel version, and machine hardware name
+
+whoami
+current users name
+
+uname -v
+version
+-s kernel name
+-r kernel release
+-n hostname
+-m machine hardware name
+
+tar -cvf myzip.tar myfile myfile2
+will archive both into a tar file
+
+tar -xvf myzip.tar 
+will extract the files
+
+grep
+global regular expression print
+to search for regular expressions across multiple lines and files
+cat myfile | grep here
+ will print the lines having word here
+
+===
+
+head and tail 
+display the beginning or end of a file
+10 lines of a file by default
+use the -n option for different number of lines
+head myfile
+
+
+diff, comm, and cmp commands are all used to compare files
+diff f1 f2
+cmp f1 f2
+tells us the line number, which is different. the first byte too.
+comm f1 f2
+compare two sorted files and display the lines that are unique to each file, as well as the lines that are common to both files
+
+sort f1
+sort lines in a text file
+-n for numeric
+sort -n f1
+sort -k 2 f1
+based on second field
+
+
+
+
+
+GitLab
+Got to your project
+
+click on Clone button
+
+clone with HTTP
+in system, go to project folder
+
+create folder assignments
+
+right click -> git bash here
+git clone https://gitlab.stackroute.in/1435224_Surendran/myhappyproject.git
+
+cd into the project
+
+edit readme / or add files
+
+git add .
+git commit -m "first commit"
+git push origin master
+
+git config --global user.email "surendran.velath@com"
+git config --global user.name "Surendran Velath"
+
+Refresh browser and see files have been uploaded
+
+
+In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.
+In the left sidebar, click  Developer settings.
+In the left sidebar, under  Personal access tokens, click Fine-grained tokens.
+Click Generate new token.
+Under Token name, enter a name for the token.
+Under Expiration, select an expiration for the token.
+Optionally, under Description, add a note to describe the purpose of the token.
+Under Resource owner, select a resource owner.
+Under Repository access, select which repositories you want the token to access. You should choose the minimal repository access that meets your needs. Tokens always include read-only access to all public repositories on GitHub.
+Under Permissions, select which permissions to grant the token. Depending on which resource owner and which repository access you specified, there are repository, organization, and account permissions.
+Click Generate token
+
+Creating a branch
+ - Navigate to the main page of the repository.
+ - From the file tree view on the left, select the  branch dropdown menu, then click View all branches. You can also find the branch dropdown menu at the top of the integrated file editor.
+ - Click New branch.
+ - Under "Branch name", type a name for the branch. (happy)
+
+ - Under "Branch source", choose a source for your branch. (main)
+
+      -If your repository is a fork, select the repository dropdown menu and click your fork or the upstream repository.
+ - Select the branch dropdown menu and click a branch.
+ - Click Create branch.
+
+git clone -b happy https://github.com/sundervel1/student_data_course.git
+cd student_data_course
+git branch -a
+#   * happy
+# make changes
+git add.
+git commit -m "changes for branch"
+git push origin happy
+
+refresh page and check branch
